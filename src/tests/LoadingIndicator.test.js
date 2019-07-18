@@ -24,6 +24,21 @@ describe('Test LoadingIndicator component', () => {
       );
       expect(wrapper.html()).toEqual('<div>Loading...</div>');
     })
+    it('should render children after 3000ms', () => {
+      jest.useFakeTimers();
+
+      const wrapper = mount(
+        <LoadingIndicator isLoading={true}>
+          <div>Hello World</div>
+        </LoadingIndicator>
+      );
+
+      jest.runAllTimers();
+      
+      expect(setTimeout).toHaveBeenCalledTimes(1);
+      expect(setTimeout).toHaveBeenLastCalledWith(expect.any(Function), 3000);
+      expect(wrapper.html()).toEqual('<div>Hello World</div>');
+    })
   })
 
 })
