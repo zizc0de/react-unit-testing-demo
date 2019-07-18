@@ -9,7 +9,9 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <LoadingIndicator isLoading={false} />
+        <LoadingIndicator isLoading={false}>
+          Hello World
+        </LoadingIndicator>
       </header>
     </div>
   );
