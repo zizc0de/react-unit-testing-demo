@@ -10,7 +10,7 @@ export default class LoadingIndicator extends React.Component {
   }
 
   componentDidMount() {
-    this.delayTimer = setTimeout(() => this.setState({ isLoading: false }), 5000);
+    this.delayTimer = setTimeout(() => this.setState({ isLoading: false }), 3000);
   }
 
   render() {
